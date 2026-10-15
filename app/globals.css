@@ -1,26 +1,148 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --brand: #c9a227;
+  --brand-deep: #a6861c;
+  --brand-soft: #f8f3e4;
+  --brand-light: #ead9a0;
+
+  --ink: #071832;
+  --ink-soft: #1c3352;
+  --ink-faint: #3d5270;
+  --copy: #12263d;
+  --muted: #5a6d86;
+  --faint: #8b98ab;
+
+  --accent: var(--brand);
+  --accent-ink: #071832;
+  --accent-soft: #e8d48a;
+  --accent-mid: #f0dc8a;
+
+  --bg: #ffffff;
+  --bg-subtle: #f5f7fb;
+  --surface: #ffffff;
+  --border: #e4e9f2;
+  --hero: var(--ink);
+  --footer: #071832;
+
+  --success: #3ddc97;
+  --error: #d94a4a;
+
+  --r-sm: 0.75rem;
+  --r-md: 0.875rem;
+  --r-lg: 1.125rem;
+  --r-xl: 1.375rem;
+
+  --section-py: clamp(4rem, 8vw, 6.875rem);
+  --section-py-md: clamp(4rem, 8vw, 6.875rem);
+  --stack-gap: 1rem;
+  --stack-gap-md: 1.25rem;
+  --split-gap: 2rem;
+  --split-gap-md: 3rem;
+  --split-gap-lg: 4rem;
+  --block-gap: 3rem;
+  --block-gap-md: 4rem;
+  --icon-gap: 1.25rem;
+  --icon-lg: 4rem;
+  --icon-md: 3rem;
+  --cell-py: 2rem;
+  --cell-py-md: 2.5rem;
+  --cell-px: 2rem;
+  --grid-gap: 1.375rem;
+
+  --container-max: 75rem;
+  --header-height: 4.25rem;
+  --hero-height: 18rem;
+  --hero-height-md: 24rem;
+
+  --elev-soft: 0 1px 2px rgb(7 24 50 / 0.06), 0 6px 18px rgb(7 24 50 / 0.05);
+  --elev-md: 0 18px 44px rgb(7 24 50 / 0.12);
+  --elev-header: 0 6px 24px rgb(7 24 50 / 0.06);
+  --elev-brand: 0 10px 24px rgb(201 162 39 / 0.3);
+  --elev-brand-hover: 0 16px 32px rgb(201 162 39 / 0.38);
+  --elev-form: 0 30px 70px rgb(0 0 0 / 0.28);
+  --elev-step: 0 8px 18px rgb(201 162 39 / 0.28);
+  --elev-ring: 0 0 0 4px rgb(201 162 39 / 0.18);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@media (min-width: 720px) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --header-height: 4.75rem;
   }
 }
 
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg-subtle: var(--bg-subtle);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-ink-faint: var(--ink-faint);
+  --color-copy: var(--copy);
+  --color-muted: var(--muted);
+  --color-faint: var(--faint);
+  --color-accent: var(--accent);
+  --color-accent-ink: var(--accent-ink);
+  --color-accent-soft: var(--accent-soft);
+  --color-accent-mid: var(--accent-mid);
+  --color-border: var(--border);
+  --color-success: var(--success);
+  --color-error: var(--error);
+  --color-hero: var(--hero);
+  --color-brand: var(--brand);
+  --color-brand-soft: var(--brand-soft);
+  --color-brand-light: var(--brand-light);
+  --color-brand-deep: var(--brand-deep);
+  --color-footer: var(--footer);
+
+  --font-sans: var(--font-body), "Helvetica Neue", sans-serif;
+  --font-display: var(--font-body), "Helvetica Neue", sans-serif;
+
+  --radius-sm: var(--r-sm);
+  --radius-md: var(--r-md);
+  --radius-lg: var(--r-lg);
+  --radius-xl: var(--r-xl);
+
+  --shadow-soft: var(--elev-soft);
+  --shadow-elev: var(--elev-md);
+  --shadow-header: var(--elev-header);
+  --shadow-glow: var(--elev-brand);
+  --shadow-glow-lg: var(--elev-brand-hover);
+  --shadow-form: var(--elev-form);
+  --shadow-step: var(--elev-step);
+  --shadow-ring: var(--elev-ring);
+
+  --spacing-section: var(--section-py);
+  --spacing-section-md: var(--section-py-md);
+  --spacing-stack: var(--stack-gap);
+  --spacing-stack-md: var(--stack-gap-md);
+  --spacing-split: var(--split-gap);
+  --spacing-split-md: var(--split-gap-md);
+  --spacing-split-lg: var(--split-gap-lg);
+  --spacing-block: var(--block-gap);
+  --spacing-block-md: var(--block-gap-md);
+  --spacing-icon-gap: var(--icon-gap);
+  --spacing-icon-lg: var(--icon-lg);
+  --spacing-icon-md: var(--icon-md);
+  --spacing-cell: var(--cell-py);
+  --spacing-cell-md: var(--cell-py-md);
+  --spacing-cell-x: var(--cell-px);
+  --spacing-hero: var(--hero-height);
+  --spacing-hero-md: var(--hero-height-md);
+  --spacing-header: var(--header-height);
+  --spacing-grid: var(--grid-gap);
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--copy);
+  font-family: var(--font-body), "Helvetica Neue", sans-serif;
+  line-height: 1.65;
+}
+
+.container-page {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: 1.5rem;
 }
