@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { site } from "@/lib/site";
 import { cx } from "@/lib/cx";
 
@@ -16,11 +17,12 @@ export function Logo({ tone = "ink", href = "#top", className }: LogoProps) {
       aria-label={site.name}
       className={cx("inline-flex shrink-0 items-center", className)}
     >
-      <img
+      <Image
         src="/logo.svg"
         alt=""
         width={168}
         height={44}
+        unoptimized
         className={cx("h-11 w-auto", light && "brightness-0 invert")}
       />
     </a>
