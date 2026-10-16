@@ -2,21 +2,19 @@
 
 import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 import { Logo } from "@/components/brand/Logo";
-import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { cx } from "@/lib/cx";
 
 const nav = [
   { href: "#challenges", label: "Objectives" },
   { href: "#services", label: "Services" },
-  { href: "#cases", label: "Cases" },
+  { href: "#workwear", label: "Workwear" },
   { href: "#process", label: "Process" },
   { href: "#why", label: "Why us" },
   { href: "#audience", label: "Audience" },
   { href: "#models", label: "Models" },
   { href: "#results", label: "Results" },
   { href: "#faq", label: "FAQ" },
-  { href: "#contact", label: "Contact" },
 ] as const;
 
 function subscribe(onStoreChange: () => void) {
@@ -78,10 +76,7 @@ export function Header() {
             </a>
           ))}
         </nav>
-        <div className="ml-auto flex items-center gap-3.5 min-[1280px]:ml-0">
-          <Button href="#contact" size="sm" variant="dark" className="hidden min-[1280px]:inline-flex">
-            Get a quote
-          </Button>
+        <div className="ml-auto flex items-center min-[1280px]:ml-0">
           <button
             ref={menuButtonRef}
             type="button"
@@ -112,9 +107,6 @@ export function Header() {
                 {link.label}
               </a>
             ))}
-            <Button href="#contact" variant="dark" className="mt-4 w-full" onClick={close}>
-              Get a project quote
-            </Button>
           </Container>
         </nav>
       ) : null}

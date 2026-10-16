@@ -11,9 +11,8 @@ async function getCurrentYear() {
 
 const links = [
   { href: "#services", label: "Services" },
-  { href: "#cases", label: "Cases" },
+  { href: "#workwear", label: "Workwear" },
   { href: "#why", label: "Why us" },
-  { href: "#contact", label: "Contact" },
 ] as const;
 
 export async function Footer() {
@@ -32,7 +31,7 @@ export async function Footer() {
             <ul className="flex flex-col gap-2.5">
               {links.map((link) => (
                 <li key={link.href}>
-                  <a href={link.href} className="hover:text-white">
+                  <a href={link.href} className="transition hover:text-white">
                     {link.label}
                   </a>
                 </li>
@@ -46,12 +45,7 @@ export async function Footer() {
             </p>
             <ul className="flex flex-col gap-2.5">
               <li>
-                <a href={site.phoneHref} className="hover:text-white">
-                  {site.phoneDisplay}
-                </a>
-              </li>
-              <li>
-                <a href={`mailto:${site.email}`} className="hover:text-white">
+                <a href={`mailto:${site.email}`} className="transition hover:text-white">
                   {site.email}
                 </a>
               </li>
@@ -59,13 +53,10 @@ export async function Footer() {
           </div>
         </div>
 
-        <div className="mt-11 flex flex-col flex-wrap items-start justify-between gap-x-6 gap-y-4 border-t border-white/10 pt-6 text-[13.4px] text-white/50 min-[720px]:flex-row min-[720px]:items-center">
+        <div className="mt-11 border-t border-white/10 pt-6 text-[13.4px] text-white/50">
           <span>
             © {year} {site.name}. All rights reserved.
           </span>
-          <a href="#contact" className="hover:text-white">
-            Company details
-          </a>
         </div>
       </Container>
     </footer>

@@ -60,7 +60,6 @@
   --elev-header: 0 6px 24px rgb(7 24 50 / 0.06);
   --elev-brand: 0 10px 24px rgb(201 162 39 / 0.3);
   --elev-brand-hover: 0 16px 32px rgb(201 162 39 / 0.38);
-  --elev-form: 0 30px 70px rgb(0 0 0 / 0.28);
   --elev-step: 0 8px 18px rgb(201 162 39 / 0.28);
   --elev-ring: 0 0 0 4px rgb(201 162 39 / 0.18);
 }
@@ -109,7 +108,6 @@
   --shadow-header: var(--elev-header);
   --shadow-glow: var(--elev-brand);
   --shadow-glow-lg: var(--elev-brand-hover);
-  --shadow-form: var(--elev-form);
   --shadow-step: var(--elev-step);
   --shadow-ring: var(--elev-ring);
 

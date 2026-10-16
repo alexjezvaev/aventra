@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { Icon } from "@/components/ui/Icon";
 import { Reveal } from "@/components/ui/Reveal";
@@ -50,15 +49,6 @@ export function Hero() {
             We find verified manufacturers, control quality at production sites, develop products
             and arrange delivery to your warehouse.
           </Text>
-          <div className="mt-8 flex flex-wrap gap-3.5 max-[420px]:[&_a]:w-full">
-            <Button href="#contact">
-              Get a project quote
-              <Icon name="arrow" className="size-4" />
-            </Button>
-            <Button href="#contact" variant="ghost">
-              Discuss your task with a manager
-            </Button>
-          </div>
           <div className="mt-11 grid gap-4 border-t border-white/15 pt-7.5 min-[960px]:grid-cols-2 min-[960px]:gap-grid">
             {trust.map((item) => (
               <div key={item.id} className="flex items-start gap-2.5">

@@ -1,7 +1,6 @@
 import { Audience } from "@/components/home/Audience";
-import { Cases } from "@/components/home/Cases";
+import { Workwear } from "@/components/home/Workwear";
 import { Challenges } from "@/components/home/Challenges";
-import { Contact } from "@/components/home/Contact";
 import { Faq } from "@/components/home/Faq";
 import { Hero } from "@/components/home/Hero";
 import { Models } from "@/components/home/Models";
@@ -16,14 +15,13 @@ export default function Home() {
       <Hero />
       <Challenges />
       <Services />
-      <Cases />
+      <Workwear />
       <Process />
       <WhyUs />
       <Audience />
       <Models />
       <Testimonial />
       <Faq />
-      <Contact />
     </>
   );
 }
