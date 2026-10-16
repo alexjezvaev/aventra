@@ -7,7 +7,7 @@ import { Container } from "@/components/ui/Container";
 import { cx } from "@/lib/cx";
 
 const nav = [
-  { href: "#challenges", label: "Challenges" },
+  { href: "#challenges", label: "Objectives" },
   { href: "#services", label: "Services" },
   { href: "#cases", label: "Cases" },
   { href: "#process", label: "Process" },

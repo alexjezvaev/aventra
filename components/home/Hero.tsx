@@ -7,15 +7,6 @@ import { Text } from "@/components/ui/Text";
 
 const trust = [
   {
-    id: "experience",
-    content: (
-      <>
-        Over <b className="font-semibold text-white">10 years</b> of experience working with Chinese
-        manufacturers
-      </>
-    ),
-  },
-  {
     id: "clients",
     content: "We work with B2B clients, importers and brands",
   },
@@ -68,7 +59,7 @@ export function Hero() {
               Discuss your task with a manager
             </Button>
           </div>
-          <div className="mt-11 grid gap-4 border-t border-white/15 pt-7.5 min-[960px]:grid-cols-3 min-[960px]:gap-grid">
+          <div className="mt-11 grid gap-4 border-t border-white/15 pt-7.5 min-[960px]:grid-cols-2 min-[960px]:gap-grid">
             {trust.map((item) => (
               <div key={item.id} className="flex items-start gap-2.5">
                 <Icon name="check-circle" className="mt-0.5 size-5 text-accent-mid" />

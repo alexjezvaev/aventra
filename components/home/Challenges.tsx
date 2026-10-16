@@ -32,7 +32,7 @@ export function Challenges() {
       id="challenges"
       tone="subtle"
       align="center"
-      eyebrow="Client challenges"
+      eyebrow="Client needs"
       title="Sourcing from China Without Risks or Unnecessary Middlemen"
     >
       <div className="grid gap-grid max-[959px]:[grid-template-columns:repeat(auto-fit,minmax(290px,1fr))] min-[960px]:grid-cols-6">

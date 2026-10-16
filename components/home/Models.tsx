@@ -43,7 +43,7 @@ function Cell({
         "block px-5.5 py-2.5 align-top text-muted min-[720px]:table-cell min-[720px]:px-6 min-[720px]:py-5.5",
         !last && "min-[720px]:border-b min-[720px]:border-border",
         first &&
-          "pt-5 text-[17px] font-bold text-ink min-[720px]:w-1/4 min-[720px]:pt-5.5 min-[720px]:text-[15.6px]",
+          "pt-5 text-[17px] font-bold whitespace-nowrap text-ink min-[720px]:pt-5.5 min-[720px]:text-[15.6px]",
       )}
     >
       {label ? (
