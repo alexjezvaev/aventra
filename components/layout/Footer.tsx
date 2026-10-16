@@ -1,17 +1,10 @@
-import { cacheLife } from "next/cache";
 import { Logo } from "@/components/brand/Logo";
 import { Container } from "@/components/ui/Container";
 import { mainNav } from "@/lib/nav";
 import { site } from "@/lib/site";
 
-async function getCurrentYear() {
-  "use cache";
-  cacheLife("max");
-  return new Date().getFullYear();
-}
-
-export async function Footer() {
-  const year = await getCurrentYear();
+export function Footer() {
+  const year = new Date().getFullYear();
 
   return (
     <footer className="bg-footer pt-[clamp(3rem,5vw,4.5rem)] pb-7 text-[14.6px] text-white/65">
