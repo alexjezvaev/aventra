@@ -1,16 +1,23 @@
+import { cacheLife } from "next/cache";
 import { Logo } from "@/components/brand/Logo";
 import { Container } from "@/components/ui/Container";
 import { site } from "@/lib/site";
 
+async function getCurrentYear() {
+  "use cache";
+  cacheLife("max");
+  return new Date().getFullYear();
+}
+
 const links = [
   { href: "#services", label: "Services" },
-  { href: "#cases", label: "Case studies" },
-  { href: "#why", label: "About us" },
-  { href: "#contact", label: "Contacts" },
+  { href: "#cases", label: "Cases" },
+  { href: "#why", label: "Why us" },
+  { href: "#contact", label: "Contact" },
 ] as const;
 
-export function Footer() {
-  const year = 2026;
+export async function Footer() {
+  const year = await getCurrentYear();
 
   return (
     <footer className="bg-footer pt-[clamp(3rem,5vw,4.5rem)] pb-7 text-[14.6px] text-white/65">
@@ -56,18 +63,9 @@ export function Footer() {
           <span>
             © {year} {site.name}. All rights reserved.
           </span>
-          <ul className="flex flex-row flex-wrap gap-5.5">
-            <li>
-              <a href="#contact" className="hover:text-white">
-                Privacy Policy
-              </a>
-            </li>
-            <li>
-              <a href="#contact" className="hover:text-white">
-                Company details
-              </a>
-            </li>
-          </ul>
+          <a href="#contact" className="hover:text-white">
+            Company details
+          </a>
         </div>
       </Container>
     </footer>

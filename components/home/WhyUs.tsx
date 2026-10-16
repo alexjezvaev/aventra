@@ -26,7 +26,7 @@ export function WhyUs() {
             as="li"
             className="flex items-start gap-3.5 rounded-sm border border-border bg-surface px-5.5 py-5"
           >
-            <Icon name="check-circle" className="mt-0.5 size-5.5 text-accent-soft" />
+            <Icon name="check-circle" className="mt-0.5 size-5.5 text-brand-text" />
             <span className="text-[15px] leading-relaxed font-medium text-ink-soft">{item}</span>
           </Reveal>
         ))}

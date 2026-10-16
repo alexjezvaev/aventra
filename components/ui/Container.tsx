@@ -12,5 +12,9 @@ export function Container({
   className,
   as: Tag = "div",
 }: ContainerProps) {
-  return <Tag className={cx("container-page", className)}>{children}</Tag>;
+  return (
+    <Tag className={cx("mx-auto w-full max-w-[var(--container-max)] px-6", className)}>
+      {children}
+    </Tag>
+  );
 }

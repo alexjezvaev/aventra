@@ -89,25 +89,6 @@ const icons = {
     viewBox: "0 0 16 16",
     children: <path d="M2 8h11M9 4l4 4-4 4" {...stroke} strokeWidth="1.8" />,
   },
-  download: {
-    viewBox: "0 0 20 20",
-    children: (
-      <>
-        <path d="M10 3v9M6.4 8.6L10 12.2l3.6-3.6" {...stroke} strokeWidth="1.7" />
-        <path d="M3.5 15.5h13" {...stroke} strokeWidth="1.7" />
-      </>
-    ),
-  },
-  route: {
-    viewBox: "0 0 20 20",
-    children: (
-      <>
-        <path d="M4.5 3.5l6 6-4.4 1.4L3.5 6.6z" {...stroke} strokeWidth="1.6" />
-        <path d="M10.5 9.5l3-3 3 3-3 3z" {...stroke} strokeWidth="1.6" />
-        <path d="M9.5 14l-1 2.5L6 14.4z" {...stroke} strokeWidth="1.6" />
-      </>
-    ),
-  },
 } satisfies Record<string, IconDef>;
 
 export type IconName = keyof typeof icons;

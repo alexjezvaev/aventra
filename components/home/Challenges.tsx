@@ -46,7 +46,7 @@ export function Challenges() {
             )}
           >
             <article className="h-full rounded-lg border border-border bg-surface p-7 transition duration-300 hover:-translate-y-1 hover:border-brand-light hover:shadow-elev">
-              <div className="mb-5 flex size-12 items-center justify-center rounded-md bg-brand-soft text-lg font-bold text-brand">
+              <div className="mb-5 flex size-12 items-center justify-center rounded-md bg-brand-soft text-lg font-bold text-brand-text">
                 {item.n}
               </div>
               <h3 className="text-lg font-bold tracking-tight text-ink">{item.text}</h3>

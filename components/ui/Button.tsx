@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { ComponentProps, ReactNode } from "react";
 import { cx } from "@/lib/cx";
 
-type ButtonVariant = "primary" | "dark" | "ghost" | "outline";
+type ButtonVariant = "primary" | "dark" | "ghost";
 type ButtonSize = "sm" | "md";
 
 const variantClasses: Record<ButtonVariant, string> = {
@@ -11,8 +11,6 @@ const variantClasses: Record<ButtonVariant, string> = {
   dark: "bg-ink text-white hover:-translate-y-0.5 hover:bg-ink-soft",
   ghost:
     "border-white/30 bg-white/5 text-white hover:border-white/50 hover:bg-white/10",
-  outline:
-    "border-border bg-surface text-ink hover:border-brand hover:text-brand",
 };
 
 const sizeClasses: Record<ButtonSize, string> = {

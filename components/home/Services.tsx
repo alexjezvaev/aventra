@@ -77,7 +77,7 @@ export function Services() {
           <Reveal key={service.title} className="h-full">
             <article className="h-full rounded-lg border border-border bg-surface p-7 transition duration-300 hover:-translate-y-1 hover:border-brand-light hover:shadow-elev">
               <div className="mb-5 flex size-12 items-center justify-center rounded-md bg-brand-soft">
-                <Icon name={service.icon} className="size-6 text-brand" />
+                <Icon name={service.icon} className="size-6 text-brand-text" />
               </div>
               <h3 className="text-lg font-bold tracking-tight text-ink">{service.title}</h3>
               <CheckList items={service.items} className="mt-4.5" />

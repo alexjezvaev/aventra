@@ -19,6 +19,13 @@ export const metadata: Metadata = {
   },
   description: site.description,
   applicationName: site.name,
+  openGraph: {
+    title: site.title,
+    description: site.description,
+    siteName: site.name,
+    locale: "en_US",
+    type: "website",
+  },
 };
 
 export const viewport: Viewport = {

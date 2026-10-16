@@ -78,13 +78,13 @@ export function Cases() {
               />
               <div className="flex flex-1 flex-col gap-5.5 p-7">
                 <div>
-                  <p className="mb-2.5 text-xs font-bold tracking-[0.13em] text-brand uppercase">
+                  <p className="mb-2.5 text-xs font-bold tracking-[0.13em] text-brand-text uppercase">
                     Client’s task
                   </p>
                   <p className="text-[15px] text-muted">{item.task}</p>
                 </div>
                 <div>
-                  <p className="mb-2.5 text-xs font-bold tracking-[0.13em] text-brand uppercase">
+                  <p className="mb-2.5 text-xs font-bold tracking-[0.13em] text-brand-text uppercase">
                     What we did
                   </p>
                   <CheckList items={item.did} />

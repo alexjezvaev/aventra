@@ -33,17 +33,13 @@ export function Faq() {
     <Section id="faq" align="center" eyebrow="FAQ" title="Frequently Asked Questions">
       <Reveal>
         <div className="overflow-hidden rounded-lg border border-border bg-surface text-left">
-          {items.map((item, index) => (
-            <details
-              key={item.q}
-              open={index === 0}
-              className="group border-b border-border last:border-b-0"
-            >
-              <summary className="relative cursor-pointer list-none py-6 pr-15 pl-6.5 text-base font-semibold text-ink transition-colors group-open:text-brand hover:bg-bg-subtle [&::-webkit-details-marker]:hidden">
+          {items.map((item) => (
+            <details key={item.q} className="group border-b border-border last:border-b-0">
+              <summary className="relative cursor-pointer list-none py-6 pr-15 pl-6.5 text-base font-semibold text-ink transition-colors group-open:text-brand-text hover:bg-bg-subtle [&::-webkit-details-marker]:hidden">
                 {item.q}
                 <span
                   aria-hidden
-                  className="absolute top-1/2 right-6.5 size-[11px] -translate-y-[70%] rotate-45 border-r-2 border-b-2 border-brand transition duration-300 group-open:-translate-y-[30%] group-open:-rotate-[135deg]"
+                  className="absolute top-1/2 right-6.5 size-[11px] -translate-y-[70%] rotate-45 border-r-2 border-b-2 border-brand-text transition duration-300 group-open:-translate-y-[30%] group-open:-rotate-[135deg]"
                 />
               </summary>
               <p className="max-w-[80ch] pr-15 pb-6.5 pl-6.5 text-[15px] leading-relaxed text-muted">

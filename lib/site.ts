@@ -1,8 +1,8 @@
 export const site = {
   name: "AVENTRA TRADING LIMITED",
-  title: "AVENTRA TRADING LIMITED — Закупки и поставки из Китая",
+  title: "AVENTRA TRADING LIMITED — Sourcing and Supply from China",
   description:
-    "Поиск и проверка производителей в Китае, контроль качества на производстве, разработка продукта и доставка до склада.",
+    "We find verified manufacturers in China, control quality at production sites, develop products and arrange delivery to your warehouse.",
   themeColor: "#071832",
   phoneDisplay: "+7 (000) 000-00-00",
   phoneHref: "tel:+70000000000",

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useSyncExternalStore } from "react";
+import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 import { Logo } from "@/components/brand/Logo";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
@@ -11,18 +11,10 @@ const nav = [
   { href: "#services", label: "Services" },
   { href: "#cases", label: "Cases" },
   { href: "#process", label: "Process" },
-  { href: "#models", label: "Models" },
-  { href: "#faq", label: "FAQ" },
-  { href: "#contact", label: "Contact" },
-] as const;
-
-const mobileNav = [
-  { href: "#challenges", label: "Challenges" },
-  { href: "#services", label: "Services" },
-  { href: "#cases", label: "Cases" },
-  { href: "#process", label: "How we work" },
   { href: "#why", label: "Why us" },
-  { href: "#models", label: "Cooperation models" },
+  { href: "#audience", label: "Audience" },
+  { href: "#models", label: "Models" },
+  { href: "#results", label: "Results" },
   { href: "#faq", label: "FAQ" },
   { href: "#contact", label: "Contact" },
 ] as const;
@@ -43,9 +35,27 @@ function getServerStuck() {
 export function Header() {
   const stuck = useSyncExternalStore(subscribe, getStuck, getServerStuck);
   const [open, setOpen] = useState(false);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
+  const mobileNavRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    if (!open) return;
+
+    mobileNavRef.current?.querySelector<HTMLAnchorElement>("a")?.focus();
+
+    function onKeyDown(event: KeyboardEvent) {
+      if (event.key !== "Escape") return;
+      setOpen(false);
+      menuButtonRef.current?.focus();
+    }
+
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
+  }, [open]);
 
   function close() {
     setOpen(false);
+    menuButtonRef.current?.focus();
   }
 
   return (
@@ -57,27 +67,28 @@ export function Header() {
     >
       <Container className="flex h-header items-center gap-7">
         <Logo />
-        <nav className="ml-auto hidden items-center gap-1.5 min-[1080px]:flex">
+        <nav className="ml-auto hidden items-center gap-0.5 min-[1280px]:flex">
           {nav.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="rounded-md px-3 py-2 text-[14.6px] font-medium text-ink-soft transition hover:bg-brand-soft hover:text-brand"
+              className="rounded-md px-2.5 py-2 text-sm font-medium text-ink-soft transition hover:bg-brand-soft hover:text-brand-text"
             >
               {link.label}
             </a>
           ))}
         </nav>
-        <div className="ml-auto flex items-center gap-3.5 min-[1080px]:ml-0">
-          <Button href="#contact" size="sm" variant="dark" className="hidden min-[1080px]:inline-flex">
+        <div className="ml-auto flex items-center gap-3.5 min-[1280px]:ml-0">
+          <Button href="#contact" size="sm" variant="dark" className="hidden min-[1280px]:inline-flex">
             Get a quote
           </Button>
           <button
+            ref={menuButtonRef}
             type="button"
-            className="flex size-11 items-center justify-center rounded-[11px] border border-border bg-white min-[1080px]:hidden"
+            className="flex size-11 items-center justify-center rounded-[11px] border border-border bg-white min-[1280px]:hidden"
             aria-label="Menu"
             aria-expanded={open}
-            aria-controls="mobile-nav"
+            aria-controls={open ? "mobile-nav" : undefined}
             onClick={() => setOpen((value) => !value)}
           >
             <span className="relative block h-0.5 w-4.5 rounded-full bg-ink before:absolute before:-top-1.5 before:left-0 before:h-0.5 before:w-4.5 before:rounded-full before:bg-ink before:content-[''] after:absolute after:top-1.5 after:left-0 after:h-0.5 after:w-4.5 after:rounded-full after:bg-ink after:content-['']" />
@@ -85,9 +96,13 @@ export function Header() {
         </div>
       </Container>
       {open ? (
-        <nav id="mobile-nav" className="border-t border-border bg-white min-[1080px]:hidden">
+        <nav
+          ref={mobileNavRef}
+          id="mobile-nav"
+          className="border-t border-border bg-white min-[1280px]:hidden"
+        >
           <Container className="flex flex-col pt-3.5 pb-5.5">
-            {mobileNav.map((link) => (
+            {nav.map((link) => (
               <a
                 key={link.href}
                 href={link.href}

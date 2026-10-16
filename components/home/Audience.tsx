@@ -22,7 +22,7 @@ export function Audience() {
         {audience.map((item) => (
           <Reveal key={item.n} className="h-full">
             <article className="flex h-full flex-col gap-3.5 rounded-lg border border-border bg-surface px-6 py-6.5 transition duration-300 hover:-translate-y-1 hover:border-brand hover:shadow-elev">
-              <span className="text-[12.5px] font-extrabold tracking-[0.12em] text-brand">
+              <span className="text-xs font-extrabold tracking-[0.12em] text-brand-text">
                 {item.n}
               </span>
               <span className="text-[15.4px] leading-snug font-semibold text-ink">{item.text}</span>

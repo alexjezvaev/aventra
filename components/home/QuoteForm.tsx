@@ -97,9 +97,6 @@ export function QuoteForm() {
           Get a consultation
         </Button>
       </div>
-      <p className="mt-3.5 text-center text-xs leading-normal text-muted">
-        By submitting the form you agree to the privacy policy.
-      </p>
       {done ? (
         <p className="mt-3.5 text-center text-[13.4px] font-semibold text-brand-deep">
           Thank you! Your request has been sent — a manager will contact you.
