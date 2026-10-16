@@ -1,5 +1,5 @@
 import { Audience } from "@/components/home/Audience";
-import { Workwear } from "@/components/home/Workwear";
+import { SafetyFootwear } from "@/components/home/SafetyFootwear";
 import { Challenges } from "@/components/home/Challenges";
 import { Faq } from "@/components/home/Faq";
 import { Hero } from "@/components/home/Hero";
@@ -15,7 +15,7 @@ export default function Home() {
       <Hero />
       <Challenges />
       <Services />
-      <Workwear />
+      <SafetyFootwear />
       <Process />
       <WhyUs />
       <Audience />

@@ -3,18 +3,18 @@ import { Reveal } from "@/components/ui/Reveal";
 import { Section } from "@/components/ui/Section";
 import { Text } from "@/components/ui/Text";
 
-export function Workwear() {
+export function SafetyFootwear() {
   return (
     <Section
-      id="workwear"
+      id="safety-footwear"
       tone="subtle"
       eyebrow="About Supply from China"
-      title="Workwear and Safety Footwear"
+      title="Safety Footwear"
     >
       <Reveal className="space-y-stack md:space-y-stack-md">
         <div className="relative aspect-[5/2] w-full overflow-hidden rounded-lg">
           <Image
-            src="/workwear.jpg"
+            src="/safety-footwear.jpg"
             alt="Safety footwear and logistics in an industrial warehouse with Aventra Trading delivery"
             fill
             sizes="100vw"

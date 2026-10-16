@@ -4,7 +4,6 @@ export const site = {
   description:
     "We find verified manufacturers in China, control quality at production sites, develop products and arrange delivery to your warehouse.",
   themeColor: "#071832",
-  email: "info@aventura-trading.com",
 } as const;
 
 /** Production URL via NEXT_PUBLIC_SITE_URL; falls back to localhost for local/dev. */

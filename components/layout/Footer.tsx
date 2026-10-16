@@ -1,6 +1,7 @@
 import { cacheLife } from "next/cache";
 import { Logo } from "@/components/brand/Logo";
 import { Container } from "@/components/ui/Container";
+import { mainNav } from "@/lib/nav";
 import { site } from "@/lib/site";
 
 async function getCurrentYear() {
@@ -9,27 +10,21 @@ async function getCurrentYear() {
   return new Date().getFullYear();
 }
 
-const links = [
-  { href: "#services", label: "Services" },
-  { href: "#workwear", label: "Workwear" },
-  { href: "#why", label: "Why us" },
-] as const;
-
 export async function Footer() {
   const year = await getCurrentYear();
 
   return (
     <footer className="bg-footer pt-[clamp(3rem,5vw,4.5rem)] pb-7 text-[14.6px] text-white/65">
       <Container>
-        <div className="grid gap-8 min-[720px]:grid-cols-2 min-[960px]:grid-cols-[1.5fr_1fr_1fr] min-[960px]:gap-9">
-          <Logo tone="light" className="self-start" />
+        <div className="grid grid-cols-[auto_minmax(0,1fr)] items-start gap-split md:gap-split-lg">
+          <Logo tone="light" className="shrink-0" />
 
-          <div>
+          <nav aria-label="Footer" className="min-w-0">
             <p className="mb-4.5 text-[13px] font-bold tracking-[0.13em] text-white uppercase">
               Links
             </p>
-            <ul className="flex flex-col gap-2.5">
-              {links.map((link) => (
+            <ul className="grid w-full grid-cols-2 gap-x-split gap-y-3 sm:grid-cols-3 min-[960px]:grid-cols-[repeat(auto-fill,minmax(9rem,1fr))] min-[960px]:gap-x-split-md">
+              {mainNav.map((link) => (
                 <li key={link.href}>
                   <a href={link.href} className="transition hover:text-white">
                     {link.label}
@@ -37,20 +32,7 @@ export async function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
-
-          <div>
-            <p className="mb-4.5 text-[13px] font-bold tracking-[0.13em] text-white uppercase">
-              Contacts
-            </p>
-            <ul className="flex flex-col gap-2.5">
-              <li>
-                <a href={`mailto:${site.email}`} className="transition hover:text-white">
-                  {site.email}
-                </a>
-              </li>
-            </ul>
-          </div>
+          </nav>
         </div>
 
         <div className="mt-11 border-t border-white/10 pt-6 text-[13.4px] text-white/50">

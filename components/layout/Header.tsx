@@ -4,18 +4,7 @@ import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 import { Logo } from "@/components/brand/Logo";
 import { Container } from "@/components/ui/Container";
 import { cx } from "@/lib/cx";
-
-const nav = [
-  { href: "#challenges", label: "Objectives" },
-  { href: "#services", label: "Services" },
-  { href: "#workwear", label: "Workwear" },
-  { href: "#process", label: "Process" },
-  { href: "#why", label: "Why us" },
-  { href: "#audience", label: "Audience" },
-  { href: "#models", label: "Models" },
-  { href: "#results", label: "Results" },
-  { href: "#faq", label: "FAQ" },
-] as const;
+import { mainNav } from "@/lib/nav";
 
 function subscribe(onStoreChange: () => void) {
   window.addEventListener("scroll", onStoreChange, { passive: true });
@@ -66,7 +55,7 @@ export function Header() {
       <Container className="flex h-header items-center gap-7">
         <Logo />
         <nav className="ml-auto hidden items-center gap-0.5 min-[1280px]:flex">
-          {nav.map((link) => (
+          {mainNav.map((link) => (
             <a
               key={link.href}
               href={link.href}
@@ -97,7 +86,7 @@ export function Header() {
           className="border-t border-border bg-white min-[1280px]:hidden"
         >
           <Container className="flex flex-col pt-3.5 pb-5.5">
-            {nav.map((link) => (
+            {mainNav.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
